@@ -1,8 +1,10 @@
 #include <iostream>
 using namespace std;
 int main(int argc, char const *argv[]) {
-  int A, B;
-  cin >> A >> B;
-  cout << A / B;
+  double a, b;
+  cin >> a >> b;
+  // 유효숫자 15개
+  cout.precision(15);
+  cout << a / b;
   return 0;
 }
