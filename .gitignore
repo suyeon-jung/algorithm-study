@@ -35,6 +35,7 @@
 *.exe
 *.out
 *.out.dSYM
+*.dSYM
 *.app
 
 ### macOS ###
