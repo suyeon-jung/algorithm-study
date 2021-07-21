@@ -1,23 +1,28 @@
 #include <iostream>
 using namespace std;
 
+// 한수인지 검사
 bool is_han_su(int n) {
-  int prev, next, base = -1, diff;
+  int prev, next, base = 0, diff;
   if ((n / 100) < 1)
     return true;
   else {
+    // 초기 설정
+    prev = n % 10;
+    n = n / 10;
+    next = n % 10;
+
+    base = prev - next;
+    cout << "base " << base << endl;
+
     while (n > 10) {
       prev = n % 10;
       n = n / 10;
       next = n % 10;
-      if (base == -1) {
-        base = prev - next;
-        cout << "base " << base << endl;
-      } else {
-        diff = prev - next;
-        if (diff != base) return false;
-        cout << "2 " << diff << endl;
-      }
+
+      diff = prev - next;
+      if (diff != base) return false;
+      cout << "2 " << diff << endl;
     }
     cout << base << "\n";
     return true;
