@@ -1,4 +1,3 @@
-// check!!
 #include <iostream>
 using namespace std;
 int main(int argc, char const *argv[]) {
@@ -10,6 +9,7 @@ int main(int argc, char const *argv[]) {
     } else {
       cout << -1 << "\n";
     }
+    // cout << (int)s.find((char)i) << " ";
   }
   return 0;
 }

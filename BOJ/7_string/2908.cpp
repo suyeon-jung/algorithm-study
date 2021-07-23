@@ -1,30 +1,23 @@
-// 숫자 뒤집기 check!!!
 #include <iostream>
-#include <string>
 using namespace std;
-int rev(int n) {
-  string s = to_string(n);
-  reverse(s.begin(), s.end());
-  return atoi(s.c_str());
-}
+// 수가 세자리 수라는 제한
 int main(int argc, char const *argv[]) {
-  int num1, num2, max;
-  int temp1, temp2;
-  cin >> num1 >> num2;
-  temp1 = num1;
-  temp2 = num2;
-  while (temp1 > 0) {
-    if (temp1 % 10 > temp2 % 10) {
-      max = num1;
+  string a, b;
+  string max;
+  cin >> a >> b;
+
+  int i = 2;
+  while (1) {
+    if (a[i] > b[i]) {
+      max = a;
       break;
-    } else if (temp1 % 10 < temp2 % 10) {
-      max = num2;
+    } else if (a[i] < b[i]) {
+      max = b;
       break;
     }
-    temp1 /= 10;
-    temp2 /= 10;
+    i--;
   }
-  cout << rev(max);
+  cout << max[2] << max[1] << max[0];
 
   return 0;
 }
