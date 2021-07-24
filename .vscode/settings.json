@@ -6,7 +6,9 @@
     "__locale": "cpp",
     "__string": "cpp",
     "string_view": "cpp",
-    "ios": "cpp"
+    "ios": "cpp",
+    "iosfwd": "cpp",
+    "vector": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }
