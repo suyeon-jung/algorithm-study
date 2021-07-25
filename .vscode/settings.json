@@ -8,7 +8,8 @@
     "string_view": "cpp",
     "ios": "cpp",
     "iosfwd": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "algorithm": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }
