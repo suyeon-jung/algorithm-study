@@ -3,9 +3,7 @@
 using namespace std;
 
 void solve();
-int countPrimeNum(int n);
-bool isPrime(int n);
-int main(int argc, char const *argv[]) {
+int main(int argc, char const* argv[]) {
   ios::sync_with_stdio(false);
   cin.tie(NULL);
 
@@ -13,36 +11,38 @@ int main(int argc, char const *argv[]) {
   return 0;
 }
 void solve() {
-  int n;
-  while (true) {
+  int n, min, max, cnt;
+  while (1) {
     cin >> n;
-    if (n == 0) {
+    if (!n) {  // 0을 입력하면 프로그램 종료
       break;
     }
-    cout << countPrimeNum(n) << "\n";
-  }
-}
-int countPrimeNum(int n) {
-  int count = 0;
 
-  // n~2n 까지 소수인지 검사
-  for (int i = n + 1; i <= 2 * n; i++) {
-    if (isPrime(i)) {
-      count++;
-    }
-  }
-  return count;
-}
-bool isPrime(int n) {
-  int limit = sqrt(n);
+    min = n + 1;
+    max = 2 * n;
+    cnt = 0;
 
-  if (n == 1) {
-    return false;
-  }
-  for (int i = 2; i <= limit; i++) {
-    if (n % i == 0) {
-      return false;
+    // 에라토스테네스의 체
+    bool* primeNum = new bool[max + 1];
+    fill_n(primeNum, max + 1, true);
+
+    primeNum[0] = false;
+    primeNum[1] = false;
+
+    for (int i = 2; i <= sqrt(max); i++) {
+      if (primeNum[i] == false) {
+        continue;
+      }
+      for (int j = i * i; j <= max; j += i) {
+        primeNum[j] = false;
+      }
     }
+
+    for (int i = min; i <= max; i++) {
+      if (primeNum[i]) {
+        cnt++;
+      }
+    }
+    cout << cnt << "\n";
   }
-  return true;
 }

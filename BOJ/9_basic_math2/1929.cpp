@@ -3,8 +3,7 @@
 using namespace std;
 
 void solve();
-bool isPrime(int n);
-int main(int argc, char const *argv[]) {
+int main(int argc, char const* argv[]) {
   ios::sync_with_stdio(false);
   cin.tie(NULL);
 
@@ -14,26 +13,31 @@ int main(int argc, char const *argv[]) {
 
 void solve() {
   int M, N;
+  bool* primeNum;
   cin >> M >> N;
 
+  // 소수 판별
+  primeNum = new bool[N + 1];
+  // 배열 초기화(memset(primeNum, true, N+1)  해도 됨)
+  fill_n(primeNum, N + 1, true);
+
+  primeNum[0] = false;
+  primeNum[1] = false;
+
+  for (int i = 2; i <= sqrt(N); i++) {
+    if (primeNum[i] == false) {
+      continue;
+    }
+
+    for (int j = i * i; j <= N; j += i) {
+      primeNum[j] = false;
+    }
+  }
+  // 소수 판별
+
   for (int i = M; i <= N; i++) {
-    if (isPrime(i) == true) {
+    if (primeNum[i]) {
       cout << i << "\n";
     }
   }
-}
-
-bool isPrime(int n) {
-  if (n == 1) {
-    return false;
-  }
-
-  int limit = sqrt(n);
-  for (int i = 2; i <= limit; i++) {
-    if (n % i == 0) {
-      return false;
-    }
-  }
-
-  return true;
 }
