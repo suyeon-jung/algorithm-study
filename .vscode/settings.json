@@ -10,7 +10,8 @@
     "iosfwd": "cpp",
     "vector": "cpp",
     "algorithm": "cpp",
-    "complex": "cpp"
+    "complex": "cpp",
+    "utility": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }
