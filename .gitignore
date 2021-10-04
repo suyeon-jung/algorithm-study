@@ -2,6 +2,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/macos,visualstudiocode,c++
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,visualstudiocode,c++
 
+## editor config
+.editorconfig
+
 ### C++ ###
 # Prerequisites
 *.d
