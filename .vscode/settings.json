@@ -1,17 +1,18 @@
 {
   "files.associations": {
-    "ostream": "cpp",
-    "iostream": "cpp",
-    "string": "cpp",
-    "__locale": "cpp",
-    "__string": "cpp",
-    "string_view": "cpp",
-    "ios": "cpp",
-    "iosfwd": "cpp",
-    "vector": "cpp",
-    "algorithm": "cpp",
-    "complex": "cpp",
-    "utility": "cpp"
-  },
+	"ostream": "cpp",
+	"iostream": "cpp",
+	"string": "cpp",
+	"__locale": "cpp",
+	"__string": "cpp",
+	"string_view": "cpp",
+	"ios": "cpp",
+	"iosfwd": "cpp",
+	"vector": "cpp",
+	"algorithm": "cpp",
+	"complex": "cpp",
+	"utility": "cpp",
+	"list": "cpp"
+},
   "C_Cpp.errorSquiggles": "Disabled"
 }
