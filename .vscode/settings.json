@@ -12,7 +12,12 @@
 	"algorithm": "cpp",
 	"complex": "cpp",
 	"utility": "cpp",
-	"list": "cpp"
+	"list": "cpp",
+	"chrono": "cpp",
+	"limits": "cpp",
+	"random": "cpp",
+	"ratio": "cpp",
+	"valarray": "cpp"
 },
   "C_Cpp.errorSquiggles": "Disabled"
 }
