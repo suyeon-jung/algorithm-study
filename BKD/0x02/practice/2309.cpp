@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -13,20 +14,22 @@ int main(void) {
     height.push_back(input);
     sum += input;
   }
-  for (int i : height) cout << i << ' ';
-  cout << '\n';
 
+  sort(height.begin(), height.end());
+
+  int check1, check2;
   for (int i = 0; i < 9; i++) {
     for (int j = i + 1; j < 9; j++) {
       if (sum - (height[i] + height[j]) == 100) {
-        remove(height.begin(), height.end(), height[i]);
-        remove(height.begin(), height.end(), height[j]);
-        cout << i << ' ' << j;
+        check1 = i;
+        check2 = j;
         break;
       }
     }
   }
-  for (int i : height) cout << i << ' ';
 
+  for (int i = 0; i < height.size(); i++) {
+    if (i != check1 && i != check2) cout << height[i] << '\n';
+  }
   return 0;
 }
