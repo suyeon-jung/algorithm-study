@@ -17,7 +17,8 @@
 	"limits": "cpp",
 	"random": "cpp",
 	"ratio": "cpp",
-	"valarray": "cpp"
+	"valarray": "cpp",
+	"stack": "cpp"
 },
   "C_Cpp.errorSquiggles": "Disabled"
 }
