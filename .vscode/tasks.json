@@ -1,3 +1,4 @@
+// 빌드와 실행을 위한 파일
 {
   // See https://go.microsoft.com/fwlink/?LinkId=733558 
   // for the documentation about the tasks.json format
@@ -8,8 +9,8 @@
           "label": "gcc build active file",
           "command": "/usr/bin/gcc",
           "args": [
-              "-g",
-              "${file}",
+            "-g", // 디버깅
+             "${file}",
               "-o",
               "${fileDirname}/${fileBasenameNoExtension}.out",
               "&&", // 앞의 명령어가 성공하면
@@ -30,7 +31,7 @@
           "args": [
             "-std=c++17", // 2020.08.05 추가
             "-stdlib=libc++", // 2020.08.05 추가
-              "-g",
+              "-g", // 디버깅
               "${file}",
               "-o",
               "${fileDirname}/${fileBasenameNoExtension}.out",
@@ -46,10 +47,13 @@
           "group": "build"
       },
       {
-          "label": "execute",
-          "type": "shell",
-          "command": "${fileDirname}/${fileBasenameNoExtension}.out",
-          "group": "build"
+          "label": "execute", // 보여지는 이름
+          "type": "shell",	// 어떤 쉘 혹은 프로세서에서 실행할지 정함
+          "command": "${fileDirname}/${fileBasenameNoExtension}.out", // 실행 명령
+          "group": "build", // 실행 유형
+		  "problemMatcher": [
+			"$gcc",
+		  ]
       }
   ]
 }

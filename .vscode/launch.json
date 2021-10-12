@@ -1,22 +1,17 @@
-// for debugging
+// 디버깅을 위한 파일
 {
-  // Use IntelliSense to learn about possible attributes.
-  // Hover to view descriptions of existing attributes.
-  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-  "version": "0.2.0",
-  "configurations": [
-      {
-          "name": "C/C++: g++ build active file",
-          "type": "cppdbg",
-          "request": "launch",
-          "program": "${fileDirname}/${fileBasenameNoExtension}.out",
-          "args": [],
-          "stopAtEntry": false,
-          "cwd": "${workspaceFolder}",
-          "environment": [],
-          "externalConsole": false,
-          "MIMode": "lldb",
-          "preLaunchTask": "C/C++: g++ build active file"
-      }
-  ]
+	// IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+	// 기존 특성에 대한 설명을 보려면 가리킵니다.
+	// 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "lldb", // 디버거 유형
+			"request": "launch", // 요청 유형
+			"name": "Debug", // 디버그 창에 나타나는 이름
+			"program": "${fileDirname}/${fileBasenameNoExtension}.out", // 디버그를 시작할때 실행할 파일(현재 열린 파일)
+			"args": [], // 디버깅할 프로그램에 전달할 arguments
+			"cwd": "${workspaceFolder}" // 현재 작업 디렉토리
+		}
+	]
 }
