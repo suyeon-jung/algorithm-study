@@ -18,7 +18,9 @@
 	"random": "cpp",
 	"ratio": "cpp",
 	"valarray": "cpp",
-	"stack": "cpp"
+	"stack": "cpp",
+	"memory": "cpp",
+	"regex": "cpp"
 },
   "C_Cpp.errorSquiggles": "Disabled"
 }
