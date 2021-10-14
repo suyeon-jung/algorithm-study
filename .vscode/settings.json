@@ -20,7 +20,8 @@
 	"valarray": "cpp",
 	"stack": "cpp",
 	"memory": "cpp",
-	"regex": "cpp"
+	"regex": "cpp",
+	"queue": "cpp"
 },
   "C_Cpp.errorSquiggles": "Disabled"
 }
