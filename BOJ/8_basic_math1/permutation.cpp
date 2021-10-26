@@ -2,8 +2,8 @@
 #include <iostream>
 using namespace std;
 
-#define n 4
-#define r 3
+#define n 8
+#define r 8
 
 // 선택 배열
 int pArr[r] = {
@@ -21,6 +21,7 @@ void permutation(int depth) {
     for (int i = 0; i < r; i++) {
       cout << pArr[i] << " ";
     }
+	cout << '\n';
     return;
   }
   // 2. 같지 않다면 재귀
