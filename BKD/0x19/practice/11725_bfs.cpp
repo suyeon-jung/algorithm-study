@@ -3,7 +3,7 @@
 #include <queue>
 using namespace std;
 
-#define MAX 100001
+#define MAX 100001 // 노드 개수의 최대값이 100000
 
 int parent[MAX];      // parent
 vector<int> adj[MAX]; // adjacent node

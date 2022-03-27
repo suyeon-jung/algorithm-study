@@ -4,37 +4,36 @@ using namespace std;
 
 #define MAX 27
 
-char lc[MAX];
-char rc[MAX];
+int node_num;
+int lc[MAX];
+int rc[MAX];
 
-void preorder(char cur)
+// 전위 순회
+void preorder(int cur)
 {
-    int idx = cur - 'A';
-    cout << cur;
-    if (lc[idx] && lc[idx] != '.')
-        preorder(lc[idx]);
-    if (rc[idx] && rc[idx] != '.')
-        preorder(rc[idx]);
+    cout << char(cur + 'A' - 1);
+    if (lc[cur])
+        preorder(lc[cur]);
+    if (rc[cur])
+        preorder(rc[cur]);
 }
-void inorder(char cur)
+// 중위 순회
+void inorder(int cur)
 {
-    int idx = cur - 'A';
-
-    if (lc[idx] && lc[idx] != '.')
-        inorder(lc[idx]);
-    cout << cur;
-    if (rc[idx] && rc[idx] != '.')
-        inorder(rc[idx]);
+    if (lc[cur])
+        inorder(lc[cur]);
+    cout << char(cur + 'A' - 1);
+    if (rc[cur])
+        inorder(rc[cur]);
 }
-void postorder(char cur)
+// 후위 순회
+void postorder(int cur)
 {
-    int idx = cur - 'A';
-
-    if (lc[idx] && lc[idx] != '.')
-        postorder(lc[idx]);
-    if (rc[idx] && rc[idx] != '.')
-        postorder(rc[idx]);
-    cout << cur;
+    if (lc[cur])
+        postorder(lc[cur]);
+    if (rc[cur])
+        postorder(rc[cur]);
+    cout << char(cur + 'A' - 1);
 }
 
 int main()
@@ -42,7 +41,6 @@ int main()
     ios::sync_with_stdio(0);
     cin.tie(0);
 
-    int node_num;
     char cur, left, right;
 
     cin >> node_num;
@@ -50,13 +48,15 @@ int main()
     for (int i = 0; i < node_num; i++)
     {
         cin >> cur >> left >> right;
-        lc[cur - 'A'] = left;
-        rc[cur - 'A'] = right;
+        if (left != '.')
+            lc[cur - 'A' + 1] = left - 'A' + 1;
+        if (right != '.')
+            rc[cur - 'A' + 1] = right - 'A' + 1;
     }
 
-    preorder('A');
+    preorder(1);
     cout << '\n';
-    inorder('A');
+    inorder(1);
     cout << '\n';
-    postorder('A');
+    postorder(1);
 }
