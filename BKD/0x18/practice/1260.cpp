@@ -14,7 +14,8 @@ vector<int> adj[MAX_VERTEX]; // 인접리스트
  * - 어떤 두 정점 사이에 여러 개의 간선이 있을 수 있다.
  * - 입력으로 주어지는 간선은 양방향이다.
  */
-void dfs(int cur)
+// 재귀
+void dfs1(int cur)
 {
     vis[cur] = true;
     cout << cur << ' ';
@@ -26,6 +27,30 @@ void dfs(int cur)
         dfs(nxt);
     }
 }
+// 비재귀
+void dfs2(int cur)
+{
+    stack<int> s;
+    s.push(cur);
+    while (!s.empty())
+    {
+        int cur = s.top();
+        s.pop();
+        if (vis[cur])
+            continue;
+        vis[cur] = true;
+        cout << cur << ' ';
+
+        for (int i = 0; i < adj[cur].size(); i++)
+        {
+            int nxt = adj[cur][adj[cur].size() - 1 - i];
+            if (vis[nxt])
+                continue;
+            s.push(nxt);
+        }
+    }
+}
+
 void bfs(int start)
 {
     queue<int> q;
@@ -36,8 +61,8 @@ void bfs(int start)
     while (!q.empty())
     {
         int cur = q.front();
-        q.pop();
         cout << cur << ' ';
+        q.pop();
         for (auto nxt : adj[cur])
         {
             if (vis[nxt])
@@ -64,12 +89,13 @@ int main()
         adj[v].push_back(u);
     }
 
+    // 번호가 작은 것부터 방문하기 위해 정렬 수행
     for (int i = 0; i < MAX_VERTEX; i++)
     {
         sort(adj[i].begin(), adj[i].end());
     }
 
-    dfs(start_vertex);
+    dfs1(start_vertex);
     cout << '\n';
 
     fill(vis, vis + MAX_VERTEX, false);
