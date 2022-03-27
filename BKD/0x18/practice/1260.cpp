@@ -96,6 +96,7 @@ int main()
     }
 
     dfs1(start_vertex);
+    // dfs2(start_vertex);
     cout << '\n';
 
     fill(vis, vis + MAX_VERTEX, false);
